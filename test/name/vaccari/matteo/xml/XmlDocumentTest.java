@@ -1,4 +1,4 @@
-package name.vaccari.matteo.xmldocument;
+package name.vaccari.matteo.xml;
 
 import java.util.List;
 

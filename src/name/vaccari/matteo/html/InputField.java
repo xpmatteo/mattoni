@@ -4,7 +4,7 @@ import java.util.Map;
 
 import static java.lang.String.format;
 
-abstract class InputField implements FormWidget {
+abstract class InputField implements FormElement {
 	private String type;
 	private String name;
 	private String value;

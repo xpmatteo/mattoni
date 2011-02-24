@@ -96,6 +96,10 @@ public class XmlFragment {
 		return node.getTextContent();
 	}
 
+	public String getAttribute(String name) {
+		return node.getAttributes().getNamedItem(name).getTextContent();
+	}
+
 	private String treatEntitiesAsText(String xml) {
 		return xml.replaceAll("&", "&amp;");
 	}
@@ -163,9 +167,5 @@ public class XmlFragment {
 		        return new InputSource(new StringReader(""));
 		    }
 		});
-	}
-
-	public String getAttribute(String name) {
-		return node.getAttributes().getNamedItem(name).getTextContent();
 	}
 }

@@ -1,5 +1,5 @@
 package name.vaccari.matteo.html;
 
-public interface HtmlRenderer {
+public interface HtmlGenerator {
 	String toHtml();
 }

@@ -1,6 +1,6 @@
 package name.vaccari.matteo.html;
 
-public interface FormWidget {
+public interface FormElement {
 
 	String getName();
 	String getValue();

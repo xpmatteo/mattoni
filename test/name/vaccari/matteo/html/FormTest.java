@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import name.vaccari.matteo.html.Form;
-import name.vaccari.matteo.html.FormWidget;
+import name.vaccari.matteo.html.FormElement;
 import name.vaccari.matteo.html.TextField;
 
 import org.junit.Test;
@@ -52,7 +52,7 @@ public class FormTest {
 		assertEquals("bar", form.getValueOf("foo"));
 	}
 
-	public class FakeWidget implements FormWidget {
+	public class FakeWidget implements FormElement {
 		private final String name;
 	
 		public FakeWidget(String name) {

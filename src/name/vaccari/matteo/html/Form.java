@@ -6,24 +6,24 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Form implements HtmlRenderer {
+public class Form implements HtmlGenerator {
 
 	private final String action;
 	private final String method;
-	private final List<FormWidget> fields = new ArrayList<FormWidget>();
+	private final List<FormElement> fields = new ArrayList<FormElement>();
 
 	public Form(String action, String method) {
 		this.action = action;
 		this.method = method;
 	}
 
-	public void add(FormWidget field) {
+	public void add(FormElement field) {
 		fields.add(field);
 	}
 
 	public Map<String, String> getParameters() {
 		Map<String, String> result = new HashMap<String, String>();
-		for (FormWidget field : fields) {
+		for (FormElement field : fields) {
 			if (null != field.getName()) {
 				result.put(field.getName(), field.getValue());
 			}
@@ -50,7 +50,7 @@ public class Form implements HtmlRenderer {
 	public String toHtml() {
 		StringBuilder result = new StringBuilder();
 		result.append(startTag("form"));
-		for (FormWidget field : fields) {
+		for (FormElement field : fields) {
 			result.append(field.toHtml());
 		}
 		result.append(endTag("form"));
@@ -65,8 +65,8 @@ public class Form implements HtmlRenderer {
 		return format("<%s action='%s' method='%s'>", name, action, method);
 	}
 
-	private FormWidget fieldWithName(String fieldName) {
-		for(FormWidget field : fields) {
+	private FormElement fieldWithName(String fieldName) {
+		for(FormElement field : fields) {
 			if (field.getName().equals(fieldName))
 				return field;
 		}
