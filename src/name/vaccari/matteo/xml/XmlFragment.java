@@ -53,6 +53,12 @@ public class XmlFragment {
 		return result ;
 	}
 	
+	
+	@Override
+	public String toString() {
+		return node.toString();
+	}
+
 	@Override
 	public int hashCode() {
 		return node.hashCode();
